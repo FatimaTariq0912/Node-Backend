@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  node-app:
+    build: .
+    # containername: nodeexpress_app
+    ports:
+      - "3000:8000"
+    volumes:
+      - .:/app
+    networks:
+      - node-network
+    environment:
+      - PORT=8000
+      - MONGO_URI=mongodb+srv://fatimatariq:g30rOrlnWaSksa5J@node.3w0kusp.mongodb.net/?retryWrites=true&w=majority&appName=Node
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - node-network
+
+networks:
+  node-network:
+    driver: bridge
