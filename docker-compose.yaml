@@ -12,7 +12,7 @@ services:
       - node-network
     environment:
       - PORT=8000
-      - MONGO_URI=mongodb+srv://fatimatariq:g30rOrlnWaSksa5J@node.3w0kusp.mongodb.net/?retryWrites=true&w=majority&appName=Node
+      - MONGO_URI
   mongo:
     image: mongo:latest
     ports:
